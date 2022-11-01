@@ -28,3 +28,33 @@ def test_bubble_sort_invalid():
     result = Lab3.bubble_sort(input_arr, 3)
 
     assert (result == [])
+
+
+def test_bubble_over_10_num():
+    input_arr = [64, 34, 25, 12, 22, 11, 90, 800, 900, 100, 1100]
+    expected = 1
+
+    assert (Lab3.bubble_sort(input_arr, Lab3.SORT_ASCENDING) == expected
+            and Lab3.bubble_sort(input_arr, Lab3.SORT_DESCENDING) == expected)
+
+def test_bubble_below_10_num():
+    input_arr = [64, 34, 25, 12, 22, 11, 90, 800, 900]
+    expected = 2
+
+    assert (Lab3.bubble_sort(input_arr, Lab3.SORT_ASCENDING) == expected
+            and Lab3.bubble_sort(input_arr, Lab3.SORT_DESCENDING) == expected)
+
+
+def test_bubble_0_num():
+    input_arr = []
+    expected = 0
+
+    assert (Lab3.bubble_sort(input_arr, Lab3.SORT_ASCENDING) == expected
+            and Lab3.bubble_sort(input_arr, Lab3.SORT_DESCENDING) == expected)
+
+def test_bubble_not_integers():
+    input_arr = [64, 34, 25, 12.1, 22, 11, 90, 800, 900]
+    expected = 3
+
+    assert (Lab3.bubble_sort(input_arr, Lab3.SORT_ASCENDING) == expected
+            and Lab3.bubble_sort(input_arr, Lab3.SORT_DESCENDING) == expected)
